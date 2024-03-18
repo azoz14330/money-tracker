@@ -1,0 +1,4 @@
+.vscode/*
+finance tracker.session.sql
+node_modules/
+.env
