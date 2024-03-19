@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Form</title>
+    <link rel="stylesheet" href="/form.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <div class="container">
+        <form id="dataForm" class="spending-form">
+            <input type="datetime-local" name="date" id="date">
+            <input type="text" id="category" name="category" placeholder="Category" maxlength="255" required>
+            <input type="number" id="amount" name="amount" placeholder="Amount" min="0" required>
+            <input type="text" name="currency" id="currency" placeholder="Currency">
+            <textarea name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
+            <div class="checkbox">
+                <label for="recurring">recurring</label>
+                <input type="checkbox" name="recurring" id="recurring">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+   </div>
+    <script src="form.js" defer></script>
+</body>
+</html>

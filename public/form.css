@@ -1,0 +1,19 @@
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: red; */
+}
+.spending-form{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    font-size: 1.5rem;
+}
