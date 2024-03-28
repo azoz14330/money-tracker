@@ -42,3 +42,11 @@
 .close:hover{
     cursor: pointer;
 }
+option{
+    background-color: grey;
+    padding: 16px;
+}
+select{
+    background-color: grey;
+    padding: 16px;
+}

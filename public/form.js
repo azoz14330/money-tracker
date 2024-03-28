@@ -1,3 +1,17 @@
+const calculateBalance = async ()=>{
+    let balance = await fetch('http://localhost:5000/balance-spent');
+    let b = await balance.json();
+    b = await b.balance.toFixed(2);
+    return b;
+  }
+  
+  const showBalance = async () =>{
+    let balance = document.getElementById('balance');
+    balance.innerText = balance.innerText +' '+ await calculateBalance() +' SAR';
+    console.log(await calculateBalance())
+  }
+showBalance();
+
 const form = document.getElementById('dataForm');
 const close = document.getElementById('modal-close-btn');
 const modal = document.getElementById('add-modal');
@@ -25,6 +39,7 @@ form.addEventListener('submit', async (e) =>{
         currency: form.currency.value,
         description: form.description.value,
         recurring: form.recurring.checked? 1: 0,
+        type : form.type.value.toLowerCase(),
     };
     try {
         const response = await fetch('/add-data',{
@@ -41,6 +56,7 @@ form.addEventListener('submit', async (e) =>{
             console.log(result);
             form.reset();
             addTime();
+            showBalance();
         }
     } catch (error) {
         console.log(error);

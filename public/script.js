@@ -55,4 +55,3 @@ document.getElementById('fetchButton').addEventListener('click', async () => {
     console.log(error)
   };
   });
-  
