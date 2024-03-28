@@ -17,7 +17,10 @@ app.use((req,res,next) =>{
   }
 })
 
+
+
 app.use(express.static(path.join(__dirname,'public/')));
+
 const connection = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
