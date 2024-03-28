@@ -1,4 +1,21 @@
 const form = document.getElementById('dataForm');
+const close = document.getElementById('modal-close-btn');
+const modal = document.getElementById('add-modal');
+const add = document.getElementById('add');
+const container = document.getElementById('modal-container');
+add.addEventListener('click', (e)=>{
+    e.preventDefault();
+    modal.classList.remove('hidden');
+})
+close.addEventListener('click', (e)=>{
+    e.preventDefault();
+    modal.classList.add('hidden');
+})
+container.addEventListener('click', (e) => {
+    if(e.target === container){
+        modal.classList.add('hidden');
+    }
+})
 form.addEventListener('submit', async (e) =>{
     e.preventDefault();
     const formData = {

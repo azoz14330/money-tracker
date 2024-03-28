@@ -5,12 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fetch Items</title>
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="form.css">
+  <script src="/script.js" defer></script>
+  <script src="/form.js" defer></script>
 </head>
 <body>
-  <button id="fetchButton">Fetch Items</button>
-  <button id="clear" class="hidden">Clear</button>
-  <div id="items"></div>
+<div class="modal hidden" id="add-modal">
+      <div class="container" id="modal-container">
+        <form id="dataForm" class="spending-form">
+          <button type="button" class="close" id="modal-close-btn">x</button>
+            <h1>Now, What did you spend your money on?</h1>
+            <input type="datetime-local" name="date" id="date">
+            <input type="text" id="category" name="category" placeholder="Category" maxlength="255" required>
+            <input type="number" id="amount" name="amount" placeholder="Amount" min="0" required>
+            <input type="text" name="currency" id="currency" placeholder="Currency">
+            <textarea name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
+            <div class="checkbox">
+                <label for="recurring">recurring</label>
+                <input type="checkbox" name="recurring" id="recurring">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
 
-  <script src="/script.js"></script>
+  <div class="hero">
+    <div class="text-section">
+      <h1>My Finance Tracker</h1>
+    </div>
+    <div>
+      <div class="btns-group" id="btns-group">
+        <button type="button" id="fetchButton">Spendings</button>
+        <button type="button" id="add">Add</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="output-container">
+    <button type="button" id="clear" class="hidden">Clear</button>
+    <div class="items">
+      <table id="items">
+
+      </table>
+    </div>
+  </div>
 </body>
 </html>

@@ -9,6 +9,14 @@ const port = 5000;
 app.use(cors());
 app.use(express.json());
 
+app.use((req,res,next) =>{
+  if(req.method == 'GET'){
+    res.redirect('https://www.google.com/');
+  }else{
+    next()
+  }
+})
+
 app.use(express.static(path.join(__dirname,'public/')));
 const connection = mysql.createConnection({
     host: process.env.DB_HOST,
@@ -28,7 +36,7 @@ app.get('/add', (req,res) =>{
 })
 app.get('/items', (req, res) => {
   console.log('Sending....')
-    const query = 'SELECT * FROM spendings';
+    const query = 'SELECT * FROM spendings ORDER BY Date DESC';
     connection.query(query, (err, results) => {
       if (err) throw err;
       res.json(results);
